@@ -72,9 +72,7 @@
 .syntaxhighlighter .line {
   white-space: pre !important;
 }
-.syntaxhighlighter table {
-  width: 100% !important;
-}
+.syntaxhighlighter table {margin:6px 0 !important;width:100% !important;}
 .syntaxhighlighter table caption {
   text-align: left !important;
   padding: .5em 0 0.5em 1em !important;

@@ -25,7 +25,7 @@ table,img,fieldset {border:0;}
 ul, ol {list-style:none;}
 em,address {font-style:normal;}
 a {text-decoration:none; color:#b7b7b7;}
-a:hover,a:active,a:focus {text-decoration:none; color:#21b9f3} 
+a:hover,a:active,a:focus {text-decoration:none; color:#43CC2E} 
 
 table {width:100%;/*table-layout:fixed;*/}
 table, tbody, tfoot, thead, tr, th, td {border-collapse:separate;border-spacing:0;table-layout:fixed;} /*border:none; separate*/
@@ -59,3 +59,4 @@ html, div, textarea, select {scrollbar-3dlight-color:#b4b4b4; scrollbar-arrow-co
 .mt20 {margin-top:20px !important;}
 .mt25 {margin-top:25px !important;}
 .mt30 {margin-top:30px !important;}
+.mt40 {margin-top:40px !important;}

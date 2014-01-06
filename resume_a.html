@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>브레이브이노베이션 마크업가이드</title>
+<title>이노마인드 마크업가이드</title>
 <meta name="Generator" content="EditPlus®">
 <meta name="Author" content="">
 <meta name="Keywords" content="">
@@ -31,9 +31,9 @@
 			<div class="nav_snb">
 				<ul class="lnb">
 					<li class="dropdown open">
-						<a href="#" class="active">프로젝트 기본항목</a>
+						<a href="#" class="active">HTML&amp;CSS</a>
 						<ul>
-							<li><a href="resume_a.html" class="active">프로젝트 환경</a></li>
+							<li><a href="resume_a.html" class="active">Document Type Definition</a></li>
 							<li><a href="resume_b.html">디렉토리 구조</a></li>
 							<li><a href="resume_c.html">Back-end 개발체크 항목</a></li>
 						</ul>
@@ -69,13 +69,38 @@
 		<div id="rightpanel">
 			<div id="content_wrap">
 				<div id="content">
-					<h2 id="titleButton">프로젝트 환경</h2>
-					<ul class="lst_a1">
-						<li>아래 종류는 마크업 작업시 기본적인 가이드 관련 내용이다.</li>
-						<li>HTML 작업시 지켜야 할 항목들 임</li>
-						<li>OS 지원 / 문서타입 / 기본 해상도 / 인코딩 은 기획단계에서 나오기 때문에 꼭 확인해야 함</li>
-					</ul>
-					<div>
+					<h2>Document Type Definition</h2>
+					<div class="cont_sec1 first">
+						<h4>DTD의 정의</h4>
+						<ul class="lst_a1">
+							<li>문서의 정보 모델을 구체적으로 서술한 것을 DTD(Data Type Definition : 문서 형태 정의)</li>
+							<li>DTD에는 문서를 구성하는 정보 요소, 정보 요소의 구조와 특성 등 문서의 형태를 구조화하여 정의한 것으로, 문서의 조직 규칙을 정의한 것이다. 따라서, XML 문서는 DTD에서 정의한 구조 형식대로 작성되어야 한다.</li>
+							<li>문서 작성에 DTD를 사용함으로써 다음과 같은 장점</li>
+							<li>DTD는 문서 작성을 위한 템플리트(template)의 역할</li>
+							<li>DTD는 문서 조직의 표준 형식을 정의하는데 유용하다.</li>
+							<li>DTD를 사용함으로써 문서가 제대로 작성되었는지를 확인할 수 있다.</li>
+							<li>DTD는 XML의 정보 모델링을 기술한 것으로 메타데이터(metadata)를 정의한다는데 중요성이 있다.</li>
+							<li>DTD는 전문적인 마크업 언어를 정의하는 메타데이터 기술에 사용할 수 있다.</li>
+							<li>전문 마크업 언어는 XML을 기반으로 하여 DTD에 정의된 문서 조직 규칙에 따라 문서를 마크업한다.</li>
+						</ul>
+					</div>
+					<div class="cont_sec1">
+						<h4>DTD의 종류</h4>
+						<ul class="lst_a1">
+							<li>XML 문서 안에 존재할 때 내부 DTD라 하고, XML 문서 밖에 존재할 때 외부 DTD라 한다.</li>
+							<li>문서 작성에 DTD를 사용함으로써 다음과 같은 장점</li>
+							<li>내부 DTD는 작성하는 해당 XML 문서 자체에 대한 규칙을 정의한다.</li>
+							<li>자체 문서에만 적용되는 문서 규칙을 지정하고자 할 때, 내부 DTD를 사용한다.</li>
+							<li>외부 DTD는 여러 사람이나 여러 문서가 공유해서 사용할 수 있는 DTD이다.</li>
+							<li>외부 DTD는 공유를 목적으로 작성되는 경우가 많으며, 전문 분야의 문서 작성 규칙을 정의하는데 사용된다.</li>
+							<li>XML 문서는 내부 DTD와 외부 DTD를 혼용해서 작성할 수 있다.</li>
+							<li>내부 DTD와 외부 DTD 사이에 문서 조직 규칙에 충돌이 발생하는 경우가 있다. 이때는 내부 DTD가 우선권을 갖는다.</li>
+							<li>외부 DTD의 문서 조직 구성이 작성하고자 하는 XML 문서와 차이가 있을 때, 해당 부분만을 내부 DTD에서 재정의하여 사용할 수 있다.</li>
+							<li>외부 DTD를 작성하고자 하는 문서의 특성에 맞도록 재조정할 수 있다</li>
+							<li>외부 DTD를 재정의 하면 문서의 호환성을 상실할 수 있으므로 가급적이면 피해야 한다.</li>
+						</ul>
+					</div>
+				<div>
 <pre class="brush:html">
 	<div><div><div></div></div></div>
 </pre>
