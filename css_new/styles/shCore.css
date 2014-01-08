@@ -53,13 +53,7 @@
   table-layout: inherit;
 }
 
-.syntaxhighlighter {
-  width: 100% !important;
-  margin: 1em 0 1em 0 !important;
-  position: relative !important;
-  overflow: auto !important;
-  font-size: 1em !important;
-}
+.syntaxhighlighter {width:100% !important;margin:8px 0 8px 0 !important;position:relative !important;overflow:auto !important;font-size:1em !important;}
 .syntaxhighlighter.source {
   overflow: hidden !important;
 }

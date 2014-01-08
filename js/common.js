@@ -21,4 +21,11 @@ $(document).ready(function() {
     	// }
     	
     });
+    
+    // 코드 하이라이트
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all()
+
+    // box round
+    $(".corner").corner("5px");
 });

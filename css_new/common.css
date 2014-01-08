@@ -16,8 +16,9 @@
 #rightpanel {position:absolute;left:210px;right:0;top:0;bottom:0;width:auto;height:100%;background-color:#f8f8f8}
 #content_wrap {overflow:auto;position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:auto;}
 #content {padding:20px;min-width:980px;line-height:18px;}
-#content h2 {padding:0 0 20px;margin-bottom:20px;color:#000;font-size:16px;font-weight:800;border-bottom:1px dashed #222;}
-#content h4 {margin:20px 0 10px 0;color:#000;font-size:14px;font-weight:700;}
+#content h3 {padding:0 0 20px;margin-bottom:20px;color:#000;font-size:19px;font-weight:800;}
+#content h4 {margin:20px 0 10px 0;color:#000;font-size:15px;font-weight:700;}
+#content h5 {margin:15px 0 0 0;font-size:13px;font-weight:800;}
 .mgc_a {width:180px; padding:0 0 60px; background:#d3d3d3}
 
 #footer {position:absolute;left:0;right:0;bottom:0;width:100%;height:30px;text-align:center;background-color:#474747;color:#e1e1e1;font:10px tahoma;line-height:30px;}
@@ -38,15 +39,15 @@ ul.lnb > li > ul li a.active {color:#43CC2E;}
 ul.lnb > li > ul li.last a {border:none;}
 
 /* leftpanel */
-#leftpanel h2 {padding:10px 12px 9px; font-size:12px; color:#eaeaea; background-color:#3b3b3b;}
-
-/* rightpanel */
-/*#rightpanel h2 {padding:0 0 10px 0; font-size:14px; border-bottom:1px dashed #b2b2b2}*/
-.cont_sec1 {padding-bottom:15px;border-top:1px dashed #bdbdbd;}
-.cont_sec1.first {border:none;}
+/*#leftpanel h2 {padding:10px 12px 9px; font-size:12px; color:#eaeaea; background-color:#3b3b3b;}*/
 
 /*content*/
 .lst_box_type1 {padding:10px;background-color:#FFF;border:1px solid #ccc;}
+.cont_sec1 {padding-bottom:15px;border-top:1px dashed #bdbdbd;}
+.cont_sec1.first {border:none;}
+.cont_sec1 a {color:#00c;}
+ul.lst_a1 > li {padding:0 0 0 8px;background:url(../images/dot_a1.gif) no-repeat left 9px;line-height:20px;}
+ul.lst_a1 li ul {margin-bottom:10px;}
 
 /* table */
 table.table1 {margin-bottom:30px; background:#fff; border-top:2px solid #007ab2; border-left:1px solid #ccc; }
@@ -56,8 +57,8 @@ table.table1 tbody th {background:#f7f3f3;}
 table.table1 tbody td {padding:5px 10px;color:#666;vertical-align:top;border-right:1px solid #ccc;border-bottom:1px solid #ccc;line-height:18px;}
 table.table1 tbody td a {font-weight:800;color:#0d9bb4;padding:4px 0 4px 0}
 
-ul.lst_a1 {}
-ul.lst_a1 li {padding:0 0 0 8px;background:url(../images/dot_a1.gif) no-repeat left center;line-height:20px;}
-
 /* page list */
 #container .pagelist {background-color:#e1e1e1;}
+
+/*list*/
+.dl_type1 dt {padding-left:8px;margin-top:10px;font-weight:800;background:url(../images/dot_a1.gif) no-repeat left 9px;}

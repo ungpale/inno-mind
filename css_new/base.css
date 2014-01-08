@@ -44,6 +44,7 @@ input, button, select, textarea {color:#919191; vertical-align:middle;}
 html, div, textarea, select {scrollbar-3dlight-color:#b4b4b4; scrollbar-arrow-color:#333333; scrollbar-base-color:#eeeeee; scrollbar-darkshadow-color:#ffffff; scrollbar-face-color:#eeeeee; scrollbar-highlight-color:#ffffff; scrollbar-shadow-color:#b4b4b4; }
 
 /* 공통 */
+.bold {font-weight:800 !important;}
 .fl {float:left !important;}
 .fr {float:right !important;}
 .inblock {display:inline-block; *display:inline; *zoom:1}
@@ -52,6 +53,11 @@ html, div, textarea, select {scrollbar-3dlight-color:#b4b4b4; scrollbar-arrow-co
 .show {display: block;}
 .invisible {visibility: hidden;}
 .affix {position: fixed;}
+
+.fs11 {font-size:11px !important;}
+.fc_orange {color:#d45111;}
+.fc_red {color:red !important;}
+.info1 {font-size:11px;color:#d45111;}
 
 .mt5 {margin-top:5px !important;}
 .mt10 {margin-top:10px !important;}
