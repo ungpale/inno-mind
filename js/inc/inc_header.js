@@ -7,6 +7,9 @@ header +=			'<li><a href="resume_a.html" class="on">HTML&CSS</a></li>'
 header +=			'<li><a href="library_new.html">라이브러리</a></li>'
 header +=			'<li><a href="pagelist.html">페이지리스트</a></li>'
 header +=		'</ul>'
+header +=		'<div id="memberlink" class="login">'
+header +=			'<a href="#">로그인</a>'
+header +=		'</div>'
 header +=	'</div>'
 
 document.write(header);

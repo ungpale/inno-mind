@@ -74,29 +74,395 @@
 					<div class="cont_sec1">
 						<h4>문서의 구조와 표현을 분리합니다</h4>
 						<p class="bold">문서의 마크업 언어(HTML)와 화면 표시(CSS)언어를 본래의 목적에 맞게 최대한 분리합니다. <br>의미 구조를 마크업 하는 경우 HTML 요소와 속성을 이용 합니다. 표현을 위한 HTML 요소와 속성의 사용은 지양합니다. <br>단, 테이블 셀의 경우 다양한 너비의 고정폭을 지닐 수 있는데 이것을 모두 CSS로 지정하는 것은 기대했던 효과에 대한 이점이 없으므로 예외의 경우를 허용합니다.</p>
-						<p class="mt5">
-							&lt;b align="center"&gt;...&lt;/b&gt; <span class="fc_red bold">(X)</span> 화면표시를 위한 HTML 요소와 속성이 사용되어 유지보수 이점 감소 <br>
-							&lt;applet&gt; &lt;basefont&gt; &lt;center&gt; &lt;dir&gt; &lt;font&gt; &lt;isindex&gt; &lt;menu&gt; &lt;s&gt; &lt;strike&gt; &lt;u&gt; &lt;xmp&gt; <span class="fc_red bold">(X)</span> HTML 4.01 부터 폐기된 요소들 <br>
-							&lt;h1&gt;NAVER&lt;/h1&gt; <span class="fc_red bold">(O)</span> 의미가 부여된 바른 마크업 <br>
-							&lt;col width="100"&gt;&lt;col width="50"&gt; <span class="fc_red bold">(O)</span> 테이블 셀의 너비를 지정하는 방법으로 HTML속성을 사용하였지만 허용됨
-						</p>
+						
+						<div class="box_type1">
+							<p>&lt;b align="center"&gt;...&lt;/b&gt; <span class="fc_red bold">(X)</span> 화면표시를 위한 HTML 요소와 속성이 사용되어 유지보수 이점 감소</p>
+							<p>&lt;applet&gt; &lt;basefont&gt; &lt;center&gt; &lt;dir&gt; &lt;font&gt; &lt;isindex&gt; &lt;menu&gt; &lt;s&gt; &lt;strike&gt; &lt;u&gt; &lt;xmp&gt; <span class="fc_red bold">(X)</span> HTML 4.01 부터 폐기된 요소들</p>
+							<p>&lt;h1&gt;NAVER&lt;/h1&gt; <span class="fc_red bold">(O)</span> 의미가 부여된 바른 마크업</p>
+							<p>&lt;col width="100"&gt;&lt;col width="50"&gt; <span class="fc_red bold">(O)</span> 테이블 셀의 너비를 지정하는 방법으로 HTML속성을 사용하였지만 허용됨</p>
+						</div>
+						
 						<p class="bold mt10">문서의 표현에 관한 속성은 외부(External) CSS문서에서 정의 합니다. HTML문서 Head에 CSS를 삽입하는 Internal 방식과 HTML요소에 직접 기술하는 Inline 방식의 사용은 되도록 지양합니다.</p>
+						<div class="box_type1">
+							<p>&lt;div style="width:100px"&gt;...&lt;/div&gt; <span class="fc_red bold">(△)</span> Internal 형식으로 기술하여 유지보수가 어려움</p>
+							<p>&lt;style type="text/css"&gt;...&lt;/style&gt; <span class="fc_red bold">(△)</span> Internal 형식으로 기술하여 유지보수가 어려움</p>
+							<p>&lt;style type="text/css"&gt;@import url("default.css")&lt;/style&gt; <span class="fc_red bold">(X)</span> IE 브라우저에서 이미지보다 CSS를 늦게 로드하는 결함이 있음</p>
+							<p>&lt;link href="default.css" rel="stylesheet" type="text/css"&gt; <span class="fc_red bold">(O)</span> External 형식으로 기술하여 유지보수가 쉬움</p>
+						</div>
 					</div>
-					<div class="lst_box_type1">
-						<h3>1단계 – 환경분석과 시스템배치</h3>
-						<p>기획 단계에서 프로젝트에 대한 환경적인 분석을 실시한다. 여기서 환경이라 함은 사이트가 운영 및 유지되는 서버와 서버 사이드 개발 인력의 수, 역량 등을 의미한다. 사용된 웹서버와 데이터베이스 서버는 무엇인가? 인코딩을 무엇을 할 것이며, HTML 문서의 가장 중요한 DTD 정의는 무엇으로 할 것인가? 스크립트를 구현함에 있어서 서버 사이드 개발자와 어디까지를 공유할 것인가? 디렉토리는 어떻게 구성하며 이미지 서버는 별도로 둘 것인가? 크로스 브라우징은 어디까지 지원할 것인가? 주요 접근성 이슈를 어떻게 확보할 것인가?와 같은 프로젝트 도입 이전에 고려될 수 있는 여러가지 시스템적 인적 환경을 조사하고 마크업 개발에 필요한 조건들을 기획자에게 제안하여 스토리보드에 반영될 수 있도록 한다. 특히 웹접근성 확보를 위한 고민은 디자이너와 서버 사이드 개발자의 역량에 따라서 적용 가능한 범위가 제한될 수 있으므로 충분히 논의가 될 필요가 있다. (논의 없이 웹퍼블리셔가 이러 이러한 웹접근성 이슈를 처리하자라고 문서화 해봤자 서버 사이드 개발자들은 웹퍼블리셔가 혼자서 다 할 수 있는 것들로 오해해 버리는 경우가 종종 있다.)</p>
-						<h3 class="mt25">2단계 – 구조적 설계(HTML Design)</h3>
-						<p>기획자로부터 기획문서(스토리보드)가 만들어지면 이를 바탕으로 HTML 문서를 작성한다. 이 때의 HTML 문서는 디자인이 적용되지 않은 상태이며 사이트의 가장 기초적인 골격의 형태(내용의 선형성을 유지하면서 접근성이 확보되어야 한다.)를 가진다. 완성된 HTML을 통해서 사이트 네비게이션과 프로세스를 체크하여 문제점을 보완한다. 이는 사이트의 가장 기본적인 프로토타입이 될 수 있으며, 이 단계에서 발견된 문제점은 보다 빠르고 쉽게 수정될 수 있다.</p>
-						<h3 class="mt25">3단계 – 스타일시트 설계(CSS Design)</h3>
-						<p>디자이너에 의해 디자인이 완료(또는 단계적 완료)되면 HTML 문서 위에 스타일을 작성하여 적용하기 시작한다. 둘 이상의 웹퍼블리셔가 함께 작업한다면 시니어가 마스터 CSS를 설계하고, 주니어가 이를 통해 작업을 진행할 수 있도록 한다.</p>
-						<h3 class="mt25">4단계 – 스크립트 개발(Script Development)</h3>
-						<p>스토리보드를 통해서 전체적인 프로세스를 확인하고 서버사이드 연동 없이 구현 가능한 ‘동작(behavior)’요소를 확인하여 목록화 한다. 3단계 이전에 가능한 스크립트를 구분하여 미리 작성하거나 필요한 스크립트를 준비해 두면 후반 작업의 수고를 덜어줄 수 있다. 사이트의 규모가 제법 크거나 스크립트의 사용이 많은 경우 jQuery와 같은 라이브러리를 이용하는 것도 좋다. 단, 이같은 라이브러리 사용시 서버 사이드 개발자와 합의를 해 두는 것이 좋다. 때때로 prototype.js와 jQuery가 함께 뒤섞인 사이트가 오픈되기도 하기 때문이다. 이는 매우 비효율적인 짓이다.</p>
-						<h3 class="mt25">5단계 – 테스트, 유효성 검사(Test And Validation Check)</h3>
-						<p>테스트는 사이트 네비게이션과 링크 요소의 값이 정상인지를 확인하는 과정으로, 서버 사이드 개발이 이루어지지 않은 환경에서도 적절한 링크를 따르고 있어야 한다. 특히 게시판의 리스트, 뷰, 쓰기 화면의 링크를 생략하거나 데드 링크를 수정하지 않고 그대로 서버 사이드 개발로 넘기는 경우가 많은데 협업간의 편의를 위해서라도 깔끔하게 처리하자. 유효성 검사는 HTML과 CSS에 대한 문법적 검사로 페이지 단위로 이루어진다. Firefox의 확장기능인 HTML Validator를 이용하거나 Dreamweaver의 유효성 체크를 이용하면 검사 시간을 절약할 수 있다. 단, HTML Validator나 Dreamweaver의 기능이 W3C의 유효성 검사와 같지 않을 수 있으므로 메인 페이지나 주요 페이지의 경우 별도의 W3C 유효성 검사를 실시한다.</p>
-						<h3 class="mt25">6단계 – 웹접근성 검사</h3>
-						<p>완성된 사이트(서버 사이드 개발 완료)가 웹접근성을 충분히 확보하고 있는지 확인한다. 서버 사이드 개발자에 의해 HTML과 CSS, Script의 문법이 표준을 따르지 않게 되거나, 접근성을 제한하는 경우가 확인된다면 피드백을 통해서 수정할 수 있도록 한다. 웹접근성 검사는 NIA의 K-WAH를 이용할 수 있다.</p>
-						<h3 class="mt25">7단계 – 문서화</h3>
-						<p>일련의 과정을 통해서 문서를 남기는 작업은 그 무엇보다 중요하다. 1단계 기획단계에서 시스템을 분석하고 웹접근성 확보와 표준화 레벨을 결정함에 있어서 조사하고 결정된 사항들을 문서로 만들어 기초 가이드로 설정할 수 있다. 2~6단계에 이르는 동안 협업간의 여러가지 이슈가 발생할 수 있고 이를 이슈리스트(가칭)로 정리를 해 둔다면 차후 프로젝트를 진행함에 있어서 실수와 오류를 줄일 수 있다. 최종적으로 사이트가 오픈이 되면 주요 페이지의 W3C 유효성 검사와 웹접근성 검사등을 실시한 결과를 문서화 하여 유지보수 또는 차후 리뉴얼의 참고문서가 되도록 한다.</p>
+					<div class="cont_sec1">
+						<h4>CSS 파일의 생성</h4>
+						<p class="bold">외부 CSS 파일을 HTML 문서로 불러오는 방법으로써 link와 import가 있습니다. link방식만을 사용합니다. import방식은 Internet Explorer 브라우저에서 image요소보다 CSS를 늦게 렌더링하는 결함이 있으므로 사용하지 않습니다. 미디어 타입을 지정하지 않는 경우 기본값이 'all' 이 되므로 별도의 미디어 타입은 지정하지 않습니다.</p>
+						<div class="box_type1">
+							<p>/css/<span class="fc_orange bold">deFault.css</span><span style="margin-left:15px;">// 전역 스타일을 포함하는 파일</span></p>
+							<p>/css/<span class="fc_orange bold">*.css</span><span style="margin-left:15px;">// 지역(섹션, 카테고리) 스타일을 포함하는 파일</span></p>
+							<p>/css/<span class="fc_orange bold">main.css</span>, <br>/css/<span class="fc_orange bold">popup.css</span> <span style="margin-left:15px;">// 초기화면 및 팝업등 새로운 페이지 유형인 경우 별도로 분리</span></p>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>외부 CSS 불러오기</h4>
+						<p class="bold">외부 CSS 파일을 HTML 문서로 불러오는 방법으로써 link와 import가 있습니다. link방식만을 사용합니다.import방식은 Internet Explorer 브라우저에서 image요소보다 CSS를 늦게 렌더링하는 결함이 있으므로 사용하지 않습니다. 미디어 타입을 지정하지 않는 경우 기본값이 'all' 이 되므로 별도의 미디어 타입은 지정하지 않습니다.</p>
+						<div class="box_type1">
+							<p><span class="fc_red bold">(X)</span>&nbsp;Internet Explorer 브라우저에서 image보다 CSS를 늦게 파싱하는 결함이 있으므로 사용하지 않음</p> 
+							<p>&lt;style type="text/css"&gt; <br>@import url("default.css"); <br>&lt;/style&gt;</p>
+							<p class="mt10"><span class="fc_red bold">(O)</span>&nbsp;HTML 문서에서 CSS 파일을 불러올 때 HTML 헤더에 표시할 내용</p>
+							<p>&lt;link href="default.css" rel="stylesheet" type="text/css"&gt;</p>
+							<p class="mt10"><span class="fc_red bold">(O)</span>&nbsp;CSS 문서에서 CSS 파일을 불러올 때 CSS 코드 첫 줄에 표시할 내용</p>
+							@import url("default.css");
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>문자셋(charset)의 선언</h4>
+						<p class="bold">External 형식의 CSS 문서에는 HTML 문자셋과 동일하게 문자셋 정보를 명시합니다. 영문 이외의 서체이름을 사용하는 경우 웹 브라우저에서 정확한 서체표현이 가능하고 각종 저작도구에서 문자값이 깨지지 않습니다.문자셋 선언은 문서의 첫 줄에 공백없이 삽입되어야 합니다. 문자셋 선언을 생략하는 것이 문법적으로 오류는 아니지만 원활한 유지보수를 위하여 반드시 포함시킵니다.</p>
+						<p>@charset "utf-8"; <br>@charset "euc-kr";</p>
+						<p class="bold">Dreamweaver와 같은 저작도구는 Page Properties 대화상자(Ctrl+J)를 이용하여 간단하게 charset 정보를 삽입하고 파일 인코딩 형식을 변경할 수 있습니다.</p>
+						<p class="mt5"><img src="images/guide/charset.gif" alt="드림위버의 charset 설정 대화창"></p>
+					</div>
+					<div class="cont_sec1">
+						<h4>소속 및 작성자 표기</h4>
+						<p class="bold">담당자의 소속과 작성자 및 작성일 정보를 아래와 같이 주석을 이용하여 표기합니다. 최초 저자는 이 표기는 생략할 수 없으며 유지보수만을 담당하게 되었더라도 되도록 기입하는 것이 좋습니다.</p>
+						<span>/* MOU Publisthing team CCW 120620 */</span>
+					</div>
+					<div class="cont_sec1">
+						<h4>새 문서 작성을 위한 CSS 코드 표본</h4>
+						<p class="bold">아래 CSS 코드 표본을 이용하여 새 문서를 작성하되 서체의 크기와 종류등을 변경할 수 있으며 불필요한 코드는 삭제 합니다. ' id/class 선언 규약'에 따라 작성되었으며 크로스브라우징을 위한 핵이 포함되어 있습니다.</p>
+						<div class="box_type1">
+							<span class="fc_red">@charset "utf-8"; <br>
+								/* MOU Publisthing Team CCW 120620 */</span> <br><br>
+
+							<span class="fc_red">/* 전체적인 타입 */</span><br>
+							* {margin:0;padding:0;} <br><br>
+							body, table, tr, td, select, input, textarea { font-family:"돋움",Dotum,"굴림",Gulim,seoul, arial, verdana;font-size:12px;line-height:150%;color:#6b6b6b; } <br><br>
+							em,cite,address,dfn,var{font-style:normal;} <br><br>
+							dl,ul,ol{list-style:none;} <br><br>
+							select, input, textarea, file { border:1px solid #a6b5bc;font-size:12px;} <br><br>
+							a { text-decoration:none;} <br><br>
+							a:hover, a:active, a:focus { text-decoration:underline;} <br><br>
+							<span class="fc_red">/* For Screen Reader */</span><br>
+							legend { position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;} <br><br>
+							<span class="fc_red">/* 스타일없을시 보여지는 것 */</span><br>
+							hr, h2 {display:none;} <br><br>
+							.display {display:none;} <br><br>
+							<span class="fc_red">/* 테이블기본셋팅 */</span> <br>
+							table{border-collapse:collapse;border-spacing:0;} <br><br>
+							<span class="fc_red">/* 이미지 테두리0 */</span> <br>
+							IMG { border:0; } <br><br>
+							<span class="fc_red">/* 링크점선 없애기(탭키활용불가능-클라이언트가원하는경우이외에는사용하지말것) a { selector-dummy : expression(this.hideFocus=true);} */</span> <br>
+							<span class="fc_red">/* 모든레이어나타내기-코딩용 div {border: #ff0000 1px solid;} */</span>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>CSS 속성 선언 순서</h4>
+						<p class="bold">그 쓰임새가 레이아웃과 관련이 높은 것으로 부터 시작하여 레이아웃과 무관한 것 순으로 아래와 같이 선언 합니다. 이 순서는 화면의 렌더링 효율보다는 유지보수의 이점 때문에 제안되었으며	권장하는 수준 입니다. 아래 제시된 속성들과 짝을 이루는 관련 속성들은 etc로 분류하여 따로 기술하지 않고 되도록 함께 기술합니다. <br>예를 들면 position 속성과 left, right , top, bottom 속성은 서로 연관된 속성이므로 etc로 분류하지 않고 position 다음에 기술합니다.</p>
+						<ol>
+							<li><span class="bold">1. display</span> : 표시</li>
+							<li><span class="bold">2. overflow</span> : 넘침</li>
+							<li><span class="bold">3. float</span> : 흐름</li>
+							<li><span class="bold">4. position</span> : 위치</li>
+							<li><span class="bold">5. z-index</span> : 정렬</li>
+							<li><span class="bold">6. width &amp; height</span> : 크기</li>
+							<li><span class="bold">7. margin &amp; padding</span> : 간격</li>
+							<li><span class="bold">8. border</span> : 보더</li>
+							<li><span class="bold">9. font</span> : 폰트</li>
+							<li><span class="bold">10. background</span> : 배경</li>
+							<li><span class="bold">11. etc</span> : 기타</li>
+						</ol>
+						<span>'디오플포젯-위마보폰백'</span>
+					</div>
+					<div class="cont_sec1">
+						<h4>지역 초기화를 위한 CSS 코드 참조</h4>
+						<p class="bold">공통 선택자 "*" 를 이용하여 margin, padding 등이 전역적으로 초기화 선언되지 않은 문서에 새 스타일을 안전하게 추가하는 방법을 설명하고 있습니다. <br>공통선택자를 이용하여 margin, padding등이 초기화되지 않은 상태로 작성된 오랜 문서에 뒤늦게 공통선택자를 이용하여 전역 초기화를 시도하게 되면 기존의 화면 그리드에 변화가 생기므로 새 스타일이 추가되는 지역에 한하여 부분적으로만 초기화를 시도하여야 합니다. 아래 참조 코드는 공통 선택자를 부분적으로만 초기화시켜서 기존의 스타일에 영향을 미치지 않도록 안전하게 초기화 코드를 작성하는 방법입니다.</p>
+						<div class="box_type1 mt10">
+							<p><span class="fc_red">/* Attach */</span> <br><span class="fc_red bold">.attach</span>*{margin:0; padding:0; font-family:Sans-serif;}</p>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>미디어 타입별 CSS 코드의 작성</h4>
+						<p class="bold">각종 미디어(프린터, 모바일, 보조공학기기 등)에 대응하는 별도의 CSS 코드를 작성할 수 있습니다. 별도의 미디어에 대응하는 CSS 문서를 따로 생성한뒤 link 또는 import 요소에 미디어 타입을 지정할 수 있으나 이렇게 미디어 타입별로 CSS 파일을 분리하는 것보다는 하나의 파일에 여러가지 미디어 대응 코드를 한꺼번에 모두 작성하는 것이 좋습니다. <br>한편 W3C 표준에 의하면 CSS가 다양한 미디어에 대응이 가능하도록 스펙이 정의되어 있지만 현실적으로 이것을 가장 안전하게 사용할 수 있는 경우는 인쇄장치 뿐입니다.</p>
+						<div class="box_type1">
+							<dl class="mt10">
+								<dt><span class="fc_red">아래는 W3C의 <a href="http://www.w3.org/TR/CSS2/media.html" target="_blank">CSS 2.0</a> 에 명시되어 있는 대응가능한 미디어 타입의 종류 입니다.</span></dt>
+								<dd>all (모든 출력 장치)</dd>
+								<dd>aural (음성 출력)</dd>
+								<dd>braille (점자 출력)</dd>
+								<dd>handheld (포켓, 모바일)</dd>
+								<dd>print (인쇄)</dd>
+								<dd>projection (투사 장치)</dd>
+								<dd>screen (스크린, 모니터)</dd>
+								<dd>tty (전신 타자기, Tele Type Writer)</dd>
+								<dd>tv (텔레비전, Television)</dd>
+							</dl>
+						</div>
+						<p class="mt5 bold">인쇄장치에 대응하기 위한 별도의 CSS 코드를 작성하려면 default.css문서의 끝부분에 아래와 같은 형식으로 기술합니다.</p>
+						<div class="box_type1">
+							<p><span class="fc_red">/* For Print */ <br><span class="bold">@media print</span>{</span><br>#header, <br>.snb, <br>.aside{property:value;} <br><span class="fc_red bold">}</span></p>
+						</div>
+						<p class="bold mt10">파일의 갯수가 늘어나기 때문에 권장하지 않지만 아래와 같이 인쇄를 위하여 별도의 외부 CSS 파일을 생성한 뒤 링크 하거나 임포트 하는 방법도 가능 합니다. 단 @import 방식에 미디어 타입을 지정하는 것은 IE7 이하의 브라우저에서 인식하지 못하는 버그가 있으므로 사용하지 않습니다.</p>
+						<div class="box_type1">
+							<p>&lt;link href="<span class="fc_red bold">print.css</span>" rel="stylesheet" type="text/css" media="<span class="fc_red bold">print</span>" &gt;<span class="fc_red bold">(△)</span></p>
+							<p>&lt;style type="text/css"&gt; @import url("default.css")<span class="fc_red bold">print</span>; &lt;/style&gt; <span class="fc_red bold">(X)</span></p>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>CSS 주석 가이드</h4>
+						<p class="bold">CSS코드는 의미있는 형태로 그룹핑 하고 그룹핑 된 코드 더미 첫 줄에만 주석으로 설명합니다. 주석에 사용되는 언어는 한글이든 영문이든 무방하며 가능한 직관적인 단어를 선택합니다. <br>주석과 관련된 버그를 피하기 위하여 주석 기호와 코멘트 사이에는 빈 공간을 두어야 합니다.</p>
+						<div class="box_type1">
+							<p>/*GNB*/ <span class="fc_red bold">(X)</span></p>
+							<p>/* GNB */ <span class="fc_red bold">(O)</span></p>
+						</div>
+						<p class="bold mt10">주석 안쪽에는 코드를 설명하는 문장 외에 다른 기호등을 넣지 않습니다.</p>
+						<div class="box_type1">
+							<p>/** GNB **/ <span class="fc_red bold">(X)</span></p>
+							<p>/*- GNB -*/ <span class="fc_red bold">(X)</span></p>
+							<p>/*--- GNB ---*/ <span class="fc_red bold">(X)</span></p>
+							<p>/* GNB */ <span class="fc_red bold">(O)</span></p>
+						</div>
+						<p class="bold mt10">CSS 코드가 추가로 수정되었음을 알리는 경우 수정된 코드의 시작과 끝부분에 오늘의 날짜 'YYMMDD' 를 추가 합니다.</p>
+						<div class="box_type1">
+							<p>
+								<span class="fc_red bold">(O)</span><br>
+								/* 120620 */ <span class="fc_orange bold">CSS 코드의 수정이 시작됨</span> <br>
+								... <br>
+								/* //120620 */ <span class="fc_orange bold">CSS 코드의 수정이 끝남</span>
+							</p>
+							
+							<p class="mt10">
+								<span class="fc_red bold">(O)</span><br>
+								/* 120620 GNB */ <span class="fc_orange bold">CSS 코드의 수정이 시작됨</span> <br>
+								... <br>
+								/* //120620 GNB */ <span class="fc_orange bold">CSS 코드의 수정이 끝남</span>
+							</p>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>CSS 코드의 정렬</h4>
+						<p class="bold">선택자 기준으로 개행하고, 속성 단위로는 개행하지 않습니다. 들여쓰기를 하지 않습니다.</p>
+						<div class="box_type1">
+							<p>
+								<span class="fc_red bold">(O)</span><br>
+								#selector1{property:value;}<br>
+								#selector2{property:value;}<br>
+								#selector3,<br>
+								#selector4,<br>
+								#selector5{property:value;}<br>
+							</p>
+							
+							<p class="mt10">
+								<span class="fc_red bold">(X) 속성 단위로 개행하지 않습니다</span><br>
+								#selector1{ <br>
+								  property:value; <br>
+								} <br>
+								#selector2{<br>
+								  property:value;<br>
+								}
+							</p>
+							
+							<p class="mt10">
+								<span class="fc_red bold">(X) 선택자 단위로 개행되어야 합니다</span><br>
+								#selector1, #selector2, #selector3{ <br>
+								  property:value;<br>
+								}
+							</p>
+							
+							<p class="mt10">
+								<span class="fc_red bold">(X) 들여쓰기를 하지 않습니다</span><br>
+								#selector1{property:value;}<br>
+								#selector2{property:value;}<br>
+								#selector3{property:value;}
+							</p>
+						</div>
+						
+						<p class="bold mt10">선택자와 속성은 tab 아닌 space 기준으로 띄어쓰기하며 중괄호 { } 안쪽은 띄어쓰기 하지 않습니다.</p>
+						<div class="box_type1">
+							<p>#selector^{property:value;^property:value;^property:value;} <span class="fc_red bold">(O)</span> 선택자와 속성만 띄어쓰기</p>
+							<p>#selector^{^property:value;^property:value;^property:value;^} <span class="fc_red bold">(X)</span> 중괄호 안쪽은 띄어쓰기 하지 않습니다</p>
+						</div>
+						
+						<p class="bold mt10">CSS 코드의 정돈을 위하여 코드의 그룹간 행(line) 간격은 1행 이상 비우지 않습니다. 그룹 안에서 의미있는 객체를 구분하기 위하여 1행씩 빈 행을 만드는 것은 허용 됩니다.</p>
+						<div class="box_type1">
+							<p>
+								<span class="fc_red bold">(O)</span><br>
+								/* 그룹1 */<br>
+								#selector1{property:value;}<br>
+								#selector2{property:value;}<br><br>
+							
+								/* 그룹2 */<br> 
+								#selector3{property:value;}<br>
+								#selector4{property:value;}
+							</p>
+								
+							<p class="mt15">
+								<span class="fc_red bold">(X)</span><br>
+								/* 그룹1 */ <br>
+								#selector1{property:value;}<br>
+								#selector2{property:value;}<br><br>
+								/* 그룹2 */<br>
+								#selector3{property:value;}<br>
+								#selector4{property:value;}
+							</p>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>브라우저 Hack의 사용</h4>
+						<p class="bold">
+							아직 Recommendation 되지 않은 CSS 2.1~3 문법중 현존하는 브라우저에서 지원하는 속성들은 크로스브라우징에 문제가 없다면 사용할 수 있습니다.
+							<a href="http://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validation Pass</a> 는 체크하지 않으며 현존하는 브라우저가 CSS속성 또는 Hack을 렌더링 오류없이 지원하는지의 여부만을 체크합니다. Internet Explorer 5.5 ~ 7 : 표준 계열 브라우저에 적용할 속성을 기술한 다음 IE 브라우저에 적용할 속성을 한번 더 적습니다. 이때 속성 앞에 띄어쓰기 없이 '*'를 추가합니다. DTD 무관.
+						</p>
+						<div class="box_type1">#selector{property:value; <span class="fc_red bold">*property:value</span>;}</div>
+						
+						<p class="bold mt15">
+							Internet Explorer 5.5 이상 : <a href="http://msdn.microsoft.com/en-us/library/ms532853(VS.85).aspx" target="_blank">Visual Filters and Transitions Reference</a><br>Internet Explorer 6 : 사용자가 저장된 페이지의 새 버전 확인에 대한 옵션을 '페이지를 열 때마다' 으로 설정한 경우 IE6 이하 브라우저에서는 Background Image 캐시를 활용하지 않고 이미지를 화면에 출력할 때마다 서버에 요청하는 버그가 있습니다. 이런 경우 IE 브라우저에서 Background Image가 캐시를 활용하도록 보정하는 IE전용 Javascript코드 입니다. 잘 알려진 Flicker Bug에 대한 해결방법 이지만 안정성은 확인된 바 없으므로 필요할 때에만 사용합니다. 이 문법은 Windows XP SP1 이후의 운영체제 또는 IE 브라우저의 6.00.2800.1106 이후 버전에 적용됩니다. 참조 : <a href="http://support.microsoft.com/kb/823727" target="_blank">Available memory decreases when you view a Web page in Internet Explorer 6 Service Pack 1.</a>
+						</p>
+						<div class="box_type1">try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}</div>
+						
+						<p class="bold mt15">Internet Exploler 5~6 / 5~7 : DTD가 Transitional, Strict Mode인 경우 5~6까지 적용됨. DTD가 Quirks Mode 인 경우 5~7까지 적용됨.</p>
+						<div class="box_type1">#selector{property:value; <span class="fc_red bold">_property:value;</span>}</div>
+						
+						<p class="bold mt15">Internet Exploler 7 전용 : DTD가 Transitional, Strict Mode 일때 적용됨. DTD가 Quirks Mode인 경우 적용 안됨.</p>
+						<div class="box_type1"><span class="fc_red bold">*:first-child+html</span> #selector{property:value;}</div>
+						
+						<p class="bold mt15">Internet Exploler 5.5 이하 : DTD가 Transitional, Strict Mode 일때 적용됨. 띄어쓰기와 Hack 삽입 위치에 유의. IE6 이하를 위한 Underscore Hack과 함께 IE6 Pass Filter를 적용하였으므로 IE 5.5 이하에만 적용됨.</p>
+						<div class="box_type1">#selector{property:value; <span class="fc_red bold">_property /**/:value;</span>}</div>
+						
+						<p class="bold mt15">Firefox 2 : DTD가 Transitional, Strict Mode 일때 적용됨. Firefox 전용 Hack을 사용하나 Hack이 IE7에도 영향을 미치므로 유념할 것.</p>
+						<div class="box_type1">
+							#selector{<span class="fc_red bold">property:default-value;</span>} /* 희망하는 값 */ <br>
+							#selector,x:-moz-any-link{ <span class="fc_red bold">property:firefox-value;</span>} /* Firefox2 디버깅. 하지만 Firefox3 및 IE7이 이것에 대응한다. */ <br>
+							#selector, x:-moz-any-link, x:default{ <span class="fc_red bold">property:default-value;</span>} /* Firefox3 및 IE7 브라우저를 희망하는 값으로 복원한다. */
+						</div>
+						
+						<p class="bold mt15">Opera 9 전용 : DTD에 무관하게 적용 가능. Opera 9 브라우저만 html 요소에 :first-child 가상선택자가 유효. 9.5버전부터는 작용하지 않음.</p>
+						<div class="box_type1"><span class="fc_red bold">html:first-child</span> #selector{property:value;}</div>
+						
+						<p class="bold mt15">Safari 3 전용 : DTD에 무관하게 적용 가능. 단, CSS3 속성인 :first-of-type을 다른 브라우저에서 지원하게 되면 더이상 Hack으로 사용할 수 없으므로 되도록 사용하지 않는것이 바람직.</p>
+						<div class="box_type1"><span class="fc_red bold">body:first-of-type</span>#selector{property:value;}</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>tabindex 적용 가이드</h4>
+						
+						<p class="bold">Tabindex는 접근성이나 유효성을 위해서라도 필요한 태그입니다. tabindex로 통해 키보드 컨트롤을 할 수 있도록 설계하세요.</p>
+						<div class="box_type1">
+							<span class="fc_red bold">(X)</span>두 번째 선택자에 필요 이상의 값이 들어감 <br>
+							&lt;a href="#" tabindex="10"&gt; <br>
+							&lt;a href="#" tabindex="100"&gt; <br><br>
+							<span class="fc_red bold">(O)</span>필요한 값만큼만 증가됨 <br>
+							&lt;a href="#" tabindex="10"&gt; <br>
+							&lt;a href="#" tabindex="20"&gt;
+						</div>
+
+						<p class="bold mt15">HTML4 명세는 tabindex를 다음과 같이 설명합니다. 이설명은 XHTML문서에도 동일하게 적용됩니다.</p>
+						<ul class="lst_a1">
+							<li>이 속성은 문서의 탭 순서 안에서 현재 요소의 순번을 결정한다. 값은 0부터 32767사이의 숫자여야 한다. 브라우저는 값 앞에 0이 붙어있으면 무시해야 한다.</li>
+							<li>탭 순서는 사용자가 키보드를 통해 탐색할 때 어떤 요소가 초점을 받는 순서가 되는지를 결정한다.</li>
+							<li>초점을 받을 요소는 브라우저에서 다음과 같은 규칙에 따라 탐색되어야 한다.
+								<ul>
+									<li>- 요소가 tabindex속성을 지원하고 양의 값이 할당되어 있으면 먼저 탐색되어야 한다. 탐색은 tabindex값의 가장 작은 수에서 시작하여 가장 큰 값으로 향한다. 값은 연속되는 일련의 숫자가 아니어도 상관이 없고 어떤 수로 시작해도 무방하다. 요소에 동일한 tabindex값이 지정되어 있다면 코드안에서 먼저 등장하는 순서대로 탐색되어야 한다.</li>
+									<li>- tabindex속성 지원 여부에 관계 없이 "0"의 값이 할당된 요소는 그 다음으로 탐색된다. 이 요소들은 코드 안에서 등장하는 순서대로 탐색된다.</li>
+									<li>- disabled 속성이 사용된 요소는 탭 순서에 관여하지 않는다.</li>
+								</ul>
+							</li>
+							<li class="mt5">a, area, button, input, object, select, textarea요소가 tabindex속성을 지원하는 요소이다.</li>
+							<li>html4에서는 tabidex에 -숫자를 사용할 수 없다. 그러나 html5에서는 -숫자에 대한 정의를 해놓았다.</li>
+						</ul>
+
+						<p class="bold mt15">html5 명세는 tabindex속성의 음수값을 다음과 같이 설명한다.</p>
+						<p>- tabindex 값이 음의 정수라면 요소에 초점이 도달하지 않도록 해야 한다.</p>
+						<p class="bold">정리</p>
+						<ul class="lst_a1">
+							<li>tabindex="1" <br>문서 안에서 가장 먼저 초점을 받을 수 있다. 그러나 자연스러운 마크업 순서를 거스르기 때문에 주의해서 사용해야 한다. <br>검색엔진 사이트에서 검색창에 사용하면 적합하지만(autofoucs="autofocus" 사용이 더 적절할듯.) 주의해서 사용해야 한다.</li>
+							<li>tabindex="0" <br>키보드 초점을 받을 수 없는 div, span과 같은 요소도 초점을 받을 수 있도록 만들어 줍니다. 초점을 받되 처점을 받는 순서는 자연스러운 마크업 순서를 따른다.</li>
+							<li>tabindex="-1" <br>키보드 초점을 받을 수 있는 요소도 초점을 받을 수 없도록 만들어 준다. 초점을 받을 수 없기 때문에 "-1" 이외의 다른 음의 정수 값은 사실상 의미가 없다.</li>
+						</ul>
+
+						<p class="mt15 bold">tabindex가 추가될때 아래 예제에 따라 작성합니다. 예외상황이 발생하는 경우 반드시 가이드에 따를 필요는 없습니다. fix=고정값, min=최소한계값, max=최고한계값.</p>
+						<div class="boxtype01 mt10">#wrap 
+		  					<div class="boxtype02">#header
+								<div class="boxtype03">.gnb :<strong>fix 40</strong></div>
+			 					<div class="boxtype03">.lnb :<strong>min 1</strong> ~ <strong>max 30</strong></div>
+			 					<div class="boxtype03">.search :<strong>fix 50</strong></div>
+		 					 </div>  
+		  					 <div class="boxtype02" style="clear:both; overflow:hidden;">#container <strong>min 20</strong> ~ <strong> max 30</strong> #footer 보다 높아야 함 
+		  					 	<div class="boxtype03">.spot</div>
+		  					 	<div class="boxtype03" style="float:left; display:inline-block; width:170px;">.snb <strong>min 10</strong> ~<strong> max 90</strong>  					 	 	
+						 	 		<div class="boxtype04">.account : <strong>min 90</strong> ~ </div>
+						 	 		<div class="boxtype04">.*nav*: <strong>min 60</strong> ~ <strong> max 80</strong></div>
+						 	 		<div class="boxtype04">.*section* : <strong>min 100</strong> ~ </div>
+						 	 		<div class="boxtype04">.ad : <strong>min 100</strong> ~ </div>
+		  					 	</div>  
+		  						<div class="boxtype05" style="float:left; width:423px;">.colgroup
+		  						 	<div class="boxtype03" style="width:220px; float:left;">#content :<br>#container, .colgroup이 없는 경우도 있으므로<br>#header 높고 #footer 보다 낮아야 함
+		  						 		<div class="boxtype04">.path : <strong>min 110</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.article or .section : <strong>min 115</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.path : <strong>min 115</strong> ~ </div>  						 	
+		  						 	</div>
+		  						 	<div class="boxtype03" style="width:110px; float:left;">.aside 
+		  						 		<div class="boxtype04">.ad : <strong>min 150</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.*nav* : <strong>min 150</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.*section* : <strong>min 150</strong> ~ </div>  						 	
+		  						 	</div>
+		  						</div>
+		  					</div>	 
+		  				   	<div class="boxtype02">#footer : <strong>fix 200</strong> #container, #content 보다 높아야 함 </div>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>z-index 적용 가이드</h4>
+						<p>css 2.0 표준 스펙에 의하면 z-index의 값으로는 양수와 음수 모두 유효하며 숫자의 증가 한계에 대하여 특별히 명시되어 있지 않지만 브라우저간 차이가 있으므로 주의를 요합니다. <br>음수값을 사용하는 경우 firefox는 해당요소를 화면에 출력하지 않는 버그가 있으며, 숫자의 증가값으로 33,554,739를 초과(대략 2의 24승)하는 표현은 opera와 safari 브라우저에서 제대로 표현하지 못합니다. <br>z-index의 값을 무분별하게 증가시키는 경우 콘텐츠가 업데이트 될때마다 수치가 늘어나서 브라우저의 한계치를 초과할 수 있으므로 반드시 기존 콘텐츠의 z-index값을 파악한 후 최소한의 값을 증가시켜야 합니다. <br>z-index의 증감이 필요한 경우 가능하다면 10 단위로 증감하고 10을 초과하지 않는 범위에서 지정하는 것을 권장합니다. 10 단위로 z-index를 증감하는 것은 또 다른 z-index값의 출현에 유연하게 대처하기 위함입니다.</p>
+						<div class="box_type1">
+							<span class="fc_red bold">(x)</span> 두 번째 선택자에 필요 이상의 값이 들어감 <br>
+							#selector1{z-index:10;}<br>
+							#selector2{z-index:100;}<br><br>
+							<span class="fc_red bold">(o)</span> 필요한 값만큼만 증가됨<br>
+							#selector1{z-index:10;}<br>
+							#selector2{z-index:20;}
+						</div>
+
+						<p class="bold mt15">z-index를 반드시 삽입할 이유는 없으며 z-index 가 추가되어야 하는 경우 아래 예제에 따라 작성합니다. 예외상황이 발생하는 경우 반드시 가이드에 따를 필요는 없습니다. fix=고정값, min=최소한계값, max=최고한계값.</p>
+						<div class="boxtype01 mt10">#wrap 
+		  					<div class="boxtype02">#header : <strong>min 20</strong> ~ <strong> max 30</strong> #container와의 관계를 고려하여 지정
+								<div class="boxtype03">.gnb :<strong>fix 30</strong></div>
+			 					<div class="boxtype03">.lnb :<strong>fix 20</strong></div>
+			 					<div class="boxtype03">.search :<strong>fix 10</strong></div>
+		 					 </div>  
+		  					 <div class="boxtype02" style="clear:both; overflow:hidden;">#container <strong>min 20</strong> ~ <strong> max 30</strong> #footer 보다 높아야 함 
+		  					 	<div class="boxtype03" style="height:5em;">.spot : <strong>min 10</strong> ~<strong> max 90</strong> 상황에 따라 .snb, .colgroup, #content, .aside ... 의 z-index를 고려한 후 지</div>
+		  					 	<div class="boxtype03" style="float:left; display:inline-block; width:170px;">.snb <strong>min 10</strong> ~<strong> max 90</strong>  					 	 	
+						 	 		<div class="boxtype04">.account : <strong>min 10</strong> ~ </div>
+						 	 		<div class="boxtype04">.*nav*: <strong>min 10</strong> ~ </div>
+						 	 		<div class="boxtype04">.*section* : <strong>min 10</strong> ~ </div>
+						 	 		<div class="boxtype04">.ad : <strong>min 10</strong> ~ </div>
+		  					 	</div>  
+		  						<div class="boxtype05" style="float:left; width:423px;">.colgroup : <strong>min 10</strong> ~<strong> max 90</strong>
+		  						 	<div class="boxtype03" style="float:left; width:230px;">#content : <strong>fix 20</strong><br>#container, .colgroup이 없는 경우도 있으므로<br>#header 보다 낮고 #footer 보다 높아야 함
+		  						 		<div class="boxtype04">.path : <strong>min 10</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.article or .section : <strong>min 10</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.article or .section : <strong>min 10</strong> ~ </div> 						 	
+		  						 	</div>
+		  						 	<div class="boxtype03" style="float:left; width:120px;">.aside : <strong>min 10</strong> ~<strong> max 90</strong> 
+		  						 		<div class="boxtype04">.ad : <strong>min 10</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.*nav* : <strong>min 10</strong> ~ </div>
+		  						 		<div class="boxtype04" style="height:4em;">.*section* : <strong>min 10</strong> ~ </div>  						 	
+		  						 	</div>
+		  						</div>
+		  					</div>	 
+		  				   	<div class="boxtype02">#footer : <strong>fix 10</strong> #container, #content 보다 낮아야 </div>
+						</div>
+					</div>
+					<div class="cont_sec1">
+						<h4>id &amp; class 다중 선택자 사용 제한</h4>
+						<p>다중 선택자란 동일한 요소에 여러개의 선택자를 교차 적용하기 위한 목적으로 선택자끼리 붙여서 선언된 것을 말합니다. <br>그러나 internet explorer 6의 경우 id와 class를 하나의 요소에 교차 적용했을 때 나중에 선언된 다중 선택자를 전혀 인식하지 못하는 버그가 존재합니다. <br>아래 예는 id와 class 조합의 다중 선택자를 선언한 경우 internet explorer 6가 나중에 선언된 다중 선택자를 완전히 무시하고 있다는 것을 보여주고 있습니다. <br>따라서 다중 선택자를 교차 적용하려는 경우 id와 class 조합 대신 class끼리만 조합시키는 방법이 강력하게 권장됩니다.</p>
+						<div class="box_type1">
+							<p>
+								<span class="fc_red bold">(x)</span> internet explorer 6의 다중 선택자 버그가 존재하므로 사용할 수 없음 <br>
+								#id.class1{background:#f00;} <br>
+								<del>#id.class2{background:#0f0; width:200px;}</del><span class="fc_orange bold">/* does not exist in the ie6 */</span> <br>
+								<del>#id.class3{background:#00f; width:300px; font-weight:bold;}</del> <span class="fc_orange bold">/* does not exist in the ie6 */</span> <br><br>
+								<span class="fc_red bold">(o)</span> 다중 선택자 사용법으로 권장되는 안전한 방법 <br>
+								.class.class1{background:#f00;} <br>
+								.class.class2{background:#0f0; width:200px;} <br>
+								.class.class3{background:#00f; width:300px; font-weight:bold;}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -106,12 +472,5 @@
 	
 	<script type="text/javascript" src="js/inc/inc_footer.js"></script>
 </div>
-
-<script type="text/javascript">
-	SyntaxHighlighter.all()
-</script>
-<script type="text/javascript">
-$(".corner").corner("5px");
-</script>
 </body>
 </html>

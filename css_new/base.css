@@ -25,7 +25,7 @@ table,img,fieldset {border:0;}
 ul, ol {list-style:none;}
 em,address {font-style:normal;}
 a {text-decoration:none; color:#b7b7b7;}
-a:hover,a:active,a:focus {text-decoration:none; color:#43CC2E} 
+a:hover,a:active,a:focus {text-decoration:none;color:#43CC2E}
 
 table {width:100%;/*table-layout:fixed;*/}
 table, tbody, tfoot, thead, tr, th, td {border-collapse:separate;border-spacing:0;table-layout:fixed;} /*border:none; separate*/
@@ -34,13 +34,13 @@ table, tbody, tfoot, thead, tr, th, td {border-collapse:separate;border-spacing:
 
 caption, legend {display:none;}
 fieldset {border:none;}
+label {cursor:pointer;}
 
 input {font-family:"돋움",Dotum, "굴림",Gulim,Helvetica,AppleGothic,sans-serif; color:#5e6170;}
 textarea{overflow:auto;font:12px/1.3em "돋움",Dotum, "굴림",Gulim,Helvetica,AppleGothic,sans-serif;} 
 textarea {resize:none;}
 button{cursor:pointer;}
-input, button, select, textarea {color:#919191; vertical-align:middle;}
-
+input, button, select, textarea {color:#919191;vertical-align:middle;}
 html, div, textarea, select {scrollbar-3dlight-color:#b4b4b4; scrollbar-arrow-color:#333333; scrollbar-base-color:#eeeeee; scrollbar-darkshadow-color:#ffffff; scrollbar-face-color:#eeeeee; scrollbar-highlight-color:#ffffff; scrollbar-shadow-color:#b4b4b4; }
 
 /* 공통 */
